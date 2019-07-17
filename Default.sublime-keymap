@@ -321,6 +321,57 @@
         }
     },
 
+    // Selection by line
+    {
+        "keys": ["V"],
+        "command": "expand_selection",
+        "args": {
+            "to": "line"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["s"],
+        "command": "split_selection_into_lines",
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+
+    // Multi-cursors
+    {
+        "keys": ["alt+shift+k"],
+        "command": "select_lines",
+        "args": {
+            "forward": false
+        }
+    },
+    {
+        "keys": ["alt+shift+j"],
+        "command": "select_lines",
+        "args": {
+            "forward": true
+        }
+    },
+
     // History
     {
         "keys": ["u"],
@@ -388,7 +439,7 @@
         ]
     },
     {
-        "keys": ["d", "d"],
+        "keys": ["D"],
         "command": "run_macro_file",
         "args": {
             "file": "res://Packages/Default/Delete Line.sublime-macro"
