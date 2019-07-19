@@ -52,14 +52,19 @@ class ModalInsertLine(sublime_plugin.TextCommand):
     def run(self, edit, before = False, switch_mode = None):
         if before:
             self.view.run_command(
-                "run_macro_file", 
+                "run_macro_file",
                 {"file": "res://Packages/Default/Add Line Before.sublime-macro"}
             )
         else:
             self.view.run_command(
-                "run_macro_file", 
+                "run_macro_file",
                 {"file": "res://Packages/Default/Add Line.sublime-macro"}
             )
 
         if switch_mode != None:
             updateMode(self.view, switch_mode)
+
+class ModalReplicateLine(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command("expand_selection", {"to": "line"})
+        self.view.run_command("duplicate_line")

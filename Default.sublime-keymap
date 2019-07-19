@@ -514,6 +514,23 @@
         ]
     },
 
+    // Line duplication
+    {
+        "keys": ["r", "l"],
+        "command": "modal_replicate_line",
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+
     // Find
     {
         "keys": ["f", "j"],
