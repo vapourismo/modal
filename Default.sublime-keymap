@@ -473,5 +473,44 @@
                 "operand": false
             }
         ]
+    },
+
+    // Line insertion
+    {
+        "keys": ["o"],
+        "command": "modal_insert_line",
+        "args": {
+            "switch_mode": "Insert"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["O"],
+        "command": "modal_insert_line",
+        "args": {
+            "switch_mode": "Insert",
+            "before": true
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
     }
 ]

@@ -3,12 +3,6 @@ import sublime_plugin
 
 currentMode = "Normal"
 
-def updateMode(view, mode):
-    global currentMode
-    currentMode = mode
-
-    updateVew(view)
-
 def updateVew(view):
     if currentMode != None:
         view.set_status("mode", "Mode: " + str(currentMode))
@@ -19,6 +13,12 @@ def updateVew(view):
         settings.set("highlight_line", currentMode == "Insert")
     else:
         view.erase_status("mode")
+
+def updateMode(view, mode):
+    global currentMode
+    currentMode = mode
+
+    updateVew(view)
 
 class ModalSetModeCommand(sublime_plugin.WindowCommand):
     def run(self, mode):
@@ -47,3 +47,19 @@ class WithEvents(sublime_plugin.EventListener):
             return value == operand
         elif operator == sublime.OP_NOT_EQUAL:
             return value != operand
+
+class ModalInsertLine(sublime_plugin.TextCommand):
+    def run(self, edit, before = False, switch_mode = None):
+        if before:
+            self.view.run_command(
+                "run_macro_file", 
+                {"file": "res://Packages/Default/Add Line Before.sublime-macro"}
+            )
+        else:
+            self.view.run_command(
+                "run_macro_file", 
+                {"file": "res://Packages/Default/Add Line.sublime-macro"}
+            )
+
+        if switch_mode != None:
+            updateMode(self.view, switch_mode)
