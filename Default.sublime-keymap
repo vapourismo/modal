@@ -512,5 +512,52 @@
                 "operand": false
             }
         ]
+    },
+
+    // Find
+    {
+        "keys": ["f", "j"],
+        "command": "find_under",
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["f", "k"],
+        "command": "find_under_prev",
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["f", "f"],
+        "command": "find_all_under",
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
     }
 ]
