@@ -3,7 +3,7 @@ import sublime_plugin
 
 currentMode = "Normal"
 
-def updateVew(view):
+def updateView(view):
     if currentMode != None:
         view.set_status("mode", "Mode: " + str(currentMode))
         view.set_read_only(currentMode != "Insert")
@@ -18,7 +18,7 @@ def updateMode(view, mode):
     global currentMode
     currentMode = mode
 
-    updateVew(view)
+    updateView(view)
 
 class ModalSetModeCommand(sublime_plugin.WindowCommand):
     def run(self, mode):
@@ -26,13 +26,13 @@ class ModalSetModeCommand(sublime_plugin.WindowCommand):
 
 class WithViewEvents(sublime_plugin.ViewEventListener):
     def on_activated_async(self):
-        updateVew(self.view)
+        updateMode(self.view, "Normal")
 
     def on_text_command(self, command, args):
         self.view.set_read_only(False)
 
     def on_post_text_command(self, command, args):
-        updateVew(self.view)
+        updateView(self.view)
 
 class WithEvents(sublime_plugin.EventListener):
     def on_query_context(self, view, key, operator, operand, match_all):
