@@ -576,5 +576,171 @@
                 "operand": false
             }
         ]
+    },
+
+    // Panes
+    {
+        "keys": ["w", "c"],
+        "command": "destroy_pane",
+        "args": {
+            "direction": "self"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+
+    {
+        "keys": ["w", "h"],
+        "command": "travel_to_pane",
+        "args": {
+            "direction": "left"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "l"],
+        "command": "travel_to_pane",
+        "args": {
+            "direction": "right"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "j"],
+        "command": "travel_to_pane",
+        "args": {
+            "direction": "down"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "k"],
+        "command": "travel_to_pane",
+        "args": {
+            "direction": "up"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+
+    {
+        "keys": ["w", "H"],
+        "command": "carry_file_to_pane",
+        "args": {
+            "direction": "left"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "L"],
+        "command": "carry_file_to_pane",
+        "args": {
+            "direction": "right"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "J"],
+        "command": "carry_file_to_pane",
+        "args": {
+            "direction": "down"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["w", "K"],
+        "command": "carry_file_to_pane",
+        "args": {
+            "direction": "up"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
     }
 ]
