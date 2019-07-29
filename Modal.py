@@ -71,3 +71,10 @@ class ModalReplicateLine(sublime_plugin.TextCommand):
     def run(self, edit):
         self.view.run_command("expand_selection", {"to": "line"})
         self.view.run_command("duplicate_line")
+
+class ModalInMode(sublime_plugin.TextCommand):
+    def run(self, edit, mode, command, args = {}):
+        prevMode = currentMode
+        updateMode(self.view, mode)
+        self.view.run_command(command, args)
+        updateMode(self.view, prevMode)

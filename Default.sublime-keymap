@@ -798,5 +798,23 @@
                 "operand": false
             }
         ]
+    },
+
+    // Copy, cut and paste
+    {
+        "keys": ["ctrl+x"],
+        "command": "modal_in_mode",
+        "args": {
+            "mode": "Insert",
+            "command": "cut"
+        }
+    },
+    {
+        "keys": ["ctrl+v"],
+        "command": "modal_in_mode",
+        "args": {
+            "mode": "Insert",
+            "command": "paste"
+        }
     }
 ]
