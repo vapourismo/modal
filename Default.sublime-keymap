@@ -376,6 +376,22 @@
         }
     },
 
+    // Scrolling
+    {
+        "keys": ["alt+k"],
+        "command": "scroll_lines",
+        "args": {
+            "amount": 10
+        }
+    },
+    {
+        "keys": ["alt+j"],
+        "command": "scroll_lines",
+        "args": {
+            "amount": -10
+        }
+    },
+
     // History
     {
         "keys": ["u"],
