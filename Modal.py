@@ -25,8 +25,11 @@ class ModalSetModeCommand(sublime_plugin.WindowCommand):
         updateMode(self.window.active_view(), mode)
 
 class WithViewEvents(sublime_plugin.ViewEventListener):
-    def on_activated_async(self):
+    def on_activated(self):
         updateMode(self.view, "Normal")
+
+    def on_deactivated(self):
+        updateMode(self.view, None)
 
     def on_text_command(self, command, args):
         self.view.set_read_only(False)

@@ -47,6 +47,10 @@
                 "key": "modal.mode",
                 "operator": "equal",
                 "operand": "Normal"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
             }
         ]
     },
