@@ -441,10 +441,28 @@
         ]
     },
     {
-        "keys": ["d", "w"],
+        "keys": ["d", "l"],
         "command": "delete_word",
         "args": {
             "forward": true
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["d", "h"],
+        "command": "delete_word",
+        "args": {
+            "forward": false
         },
         "context": [
             {
@@ -477,10 +495,28 @@
         ]
     },
     {
-        "keys": ["d", "$"],
+        "keys": ["d", "e"],
         "command": "run_macro_file",
         "args": {
             "file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"
+        },
+        "context": [
+            {
+                "key": "modal.mode",
+                "operator": "not_equal",
+                "operand": "Insert"
+            },
+            {
+                "key": "setting.is_widget",
+                "operand": false
+            }
+        ]
+    },
+    {
+        "keys": ["d", "a"],
+        "command": "run_macro_file",
+        "args": {
+            "file": "res://Packages/Default/Delete to BOL.sublime-macro"
         },
         "context": [
             {
