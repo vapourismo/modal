@@ -38,6 +38,12 @@ class WithViewEvents(sublime_plugin.ViewEventListener):
         updateView(self.view)
 
 class WithEvents(sublime_plugin.EventListener):
+    def on_text_command(self, view, command, args):
+        view.set_read_only(False)
+
+    def on_post_text_command(self, view, command, args):
+        updateView(view)
+
     def on_query_context(self, view, key, operator, operand, match_all):
         value = None
 
